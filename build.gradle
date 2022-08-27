@@ -18,7 +18,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     // H2: 인-메모리 DB
-    implementation 'com.h2database:h2:2.1.214'
+    runtimeOnly 'com.h2database:h2'
 
     // StringUtils
     implementation 'org.apache.commons:commons-lang3'
@@ -26,6 +26,9 @@ dependencies {
     // Lombok
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'
+
+    // Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
