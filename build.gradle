@@ -1,4 +1,6 @@
 plugins {
+    id 'org.springframework.boot' version '2.7.2' // spring boot 사용 명시
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
     id 'java'
 }
 
@@ -10,6 +12,17 @@ repositories {
 }
 
 dependencies {
+    // REST API
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // H2: 인-메모리 DB
+    runtimeOnly 'com.h2dtabase:h2'
+
+    // Lombok
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
 }
 
 test {
