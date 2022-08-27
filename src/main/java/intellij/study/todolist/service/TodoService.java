@@ -81,7 +81,11 @@ public class TodoService {
      * @param id: 식별키
      */
     public void deleteById(Long id) {
-        todoRepository.deleteById(id);
+
+        TodoEntity todoEntity = todoRepository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+
+        todoRepository.delete(todoEntity);
     }
 
     /**

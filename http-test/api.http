@@ -1,0 +1,46 @@
+### Todo 등록
+POST http://localhost:8080/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "등록입니다."
+}
+
+> {% // response handler
+client.test("Request executed successfully", function() {
+    client.assert(response.status === 200, "Response status is not 200");
+    client.global.set("id", response.body.id);
+    client.log("id >>> " + client.global.get("id"));
+});
+%}
+
+### Todo 수정
+PATCH http://localhost:8080/{{id}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "수정입니다."
+}
+
+### Todo 목록 조회
+GET http://localhost:8080/
+Content-Type: application/json
+Accept: application/json
+
+
+### Todo 정보 조회
+GET http://localhost:8080/{{id}}
+Content-Type: application/json
+Accept: application/json
+
+### Todo 삭제
+DELETE http://localhost:8080/{{id}}
+Content-Type: application/json
+Accept: application/json
+
+### Todo 전체 삭제
+DELETE http://localhost:8080/
+Content-Type: application/json
+Accept: application/json
