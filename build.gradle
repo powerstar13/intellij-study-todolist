@@ -20,6 +20,9 @@ dependencies {
     // H2: 인-메모리 DB
     implementation 'com.h2database:h2:2.1.214'
 
+    // StringUtils
+    implementation 'org.apache.commons:commons-lang3'
+
     // Lombok
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'

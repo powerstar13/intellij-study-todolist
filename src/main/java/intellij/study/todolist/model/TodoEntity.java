@@ -1,13 +1,15 @@
 package intellij.study.todolist.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
+@Getter
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class TodoEntity {
@@ -24,4 +26,16 @@ public class TodoEntity {
 
     @Column(nullable = false)
     private Boolean completed;
+
+    public void modifyTitle(String title) {
+        this.title = title;
+    }
+
+    public void modifyOrder(Long order) {
+        this.order = order;
+    }
+
+    public void modifyCompleted(Boolean completed) {
+        this.completed = completed;
+    }
 }
